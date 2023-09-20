@@ -1,14 +1,31 @@
+import client from "@/app/lib/contentfulClient"
 
+const fetchHomeCard = async () => {
+    let response = await client.getEntries({ content_type: "homecard" })
+    const homecard = response.items.map((item) => {
+        return {
+            heading: item.fields.heading,
+            description: item.fields.description,
+        }
+    })
+    return homecard
+}
 
-export default function Homecard(props) {
+export default async function Homecard() {
+    const homecard = await fetchHomeCard()
     return (
         <>
-            <div className="course-col">
-                <h3>{props.heading}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolor corporis, commodi nihil quas
-                    soluta labore quisquam impedi distinctio explicabo aut minima quos pariatur unde aliquam earum
-                    laborum velit non.</p>
-            </div>
+            {homecard.map((element) => {
+                return (
+                    <>
+                        <div className="course-col">
+                            <h3>{element.heading}</h3>
+                            <p>{element.description}</p>
+                        </div>
+                    </>
+                )
+            })}
+
         </>
     )
 }

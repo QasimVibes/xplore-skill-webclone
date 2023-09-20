@@ -1,12 +1,29 @@
-export default function Paragraph() {
+import client from "@/app/lib/contentfulClient"
+
+
+const fetchBlog = async () => {
+    let response = await client.getEntries({ content_type: "blog" })
+    const blog = response.items.map((item) => {
+        return {
+            image:item.fields.image.fields.file.url,
+            description:item.fields.description,
+
+        }
+    })
+    return blog
+}
+export default async function Paragraph() {
+    let response=await fetchBlog();
     return (
         <>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore corrupti blanditiis deserunt
-                incidunt itaque ut laudantium a amet omnis nihil, dolor doloribus. Voluptatum, accusantium? Quo,
-                aperiam nobis labore pariatur, esse vitae amet repellendus libero architecto nisi facere unde
-                ducimus perspiciatis, laudantium alias porro. Sapiente voluptatem eligendi at voluptatum optio
-                facilis?</p>
-            <br />
+            {response.map((item)=>{
+                return (
+                    <>
+                    <img src={item.image} alt="" />
+                    <p>{item.description}</p>
+                    </>
+                )
+            })}
         </>
     )
 }

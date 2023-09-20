@@ -27,25 +27,19 @@ function Home() {
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 
         <div className="row">
-          <Homecard heading="Undergraduate Programs" />
-          <Homecard heading="Graduate Programs" />
-          <Homecard heading="Adult Learning & Degree Completion" />
+          <Homecard/>
         </div>
       </section>
       <section className="campus">
         <Subsection heading="TAKE OUR VIRTUAL TOUR" />
         <div className="row">
-          <Imagecardhome img="/img/Campus1.png" heading="DELHI" />
-          <Imagecardhome img="/img/Campus2.png" heading="HYDERABAD" />
-          <Imagecardhome img="/img/Campus3.png" heading="MUMBAI" />
+          <Imagecardhome/>
         </div>
       </section>
       <section className="facilities">
         <Subsection heading="Our Facilities"/>
         <div className="row">
-          <ImageCard source="/img/libary.png" title="Best Libary" />
-          <ImageCard source="/img/playground.png" title="Athletics" />
-          <ImageCard source="/img/food.png" title="Tasty and Healthy Food" />
+          <ImageCard />
         </div>
       </section>
       <section className="testimonials">

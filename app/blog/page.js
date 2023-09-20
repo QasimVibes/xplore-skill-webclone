@@ -13,11 +13,11 @@ function Blog() {
           <div className="blog-left">
             <h2>Our Certificate & Online Program</h2>
             <h5>Aug 1, 2021</h5>
-            <img src="img/post.png" alt="" />
+            {/* <img src="img/post.png" alt="" /> */}
             <Paragraph />
+            {/* <Paragraph />
             <Paragraph />
-            <Paragraph />
-            <Paragraph />
+            <Paragraph /> */}
             <div className="comment-box">
               <h3>Leave a Comment</h3>
               <form className="comment-form">
