@@ -15,7 +15,7 @@ export default function Navbar() {
                 <i className="fab fa-staylinked"></i>kill
             </Link>
             <div className="nav-links" id="navLinks" style={{ right: isMenuVisible ? '0' : '-200px' }}>
-                <i class="fa fa-times" onClick={hideMenu}></i>
+                <i className="fa fa-times" onClick={hideMenu}></i>
                 <ul>
                     <li><Link href="/">Home</Link></li>
                     <li><Link href="/courses">Course</Link></li>
@@ -24,7 +24,7 @@ export default function Navbar() {
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>
             </div>
-            <i class="fa fa-bars" onClick={showMenu}></i>
+            <i className="fa fa-bars" onClick={showMenu}></i>
         </nav>
 
     )
